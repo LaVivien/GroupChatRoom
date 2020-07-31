@@ -35,23 +35,23 @@ The communication protocol for the chat clients and server should obey the follo
 
 - The CCC protocol also provides the following chat commands which should be interpreted by the server to perform a special task:
 	- /nick <name> : Set this client's nickname to be the string <name>. For example:
-```	
-/nick cosc150student
-```
-would set the user's nickname to cosc150student.
+	```	
+	/nick cosc150student
+	```
+	would set the user's nickname to cosc150student.
 
 	- The nickname command may be used more than once per session by any user; the current nickname is retained unless/until a subsequent /nick command is received.
 	- Nicknames do not need to be unique on the server.
 	- Nicknames are single-words and do not contain spaces.
 	- Any additional characters beyond the first word may be ignored; that is, the above and below commands would have identical effect:
-```	
-/nick cosc150student these words may be discarded
-```
+	```	
+	/nick cosc150student these words may be discarded
+	```
 	- /dm <name> <msg> : Send a message to user(s) with the specified nickname. For example:
-```	
-/dm cosc150student This is a "secret" message
-```
-should deliver the message "This is a "secret" message" only to user(s) who have the nickname "cosc150student".
+	```	
+	/dm cosc150student This is a "secret" message
+	```
+	should deliver the message "This is a "secret" message" only to user(s) who have the nickname "cosc150student".
 
 	- Only clients with the correct nickname should receive this message; nothing should be sent to any other clients.
 	- If no client has the specified nickname, this message may be ignored.
